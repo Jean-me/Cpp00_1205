@@ -12,7 +12,6 @@
 
 #include "PhoneBook.hpp"
 #include "Contact.hpp"
-// #include "Contact.hpp"
 
 //---------------------------------------------------------------------
 // ヘルパ

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-// #include "Contact.hpp"
 
 int main() // Phonebook.cppにあるべき内容
 {
@@ -26,9 +25,8 @@ int main() // Phonebook.cppにあるべき内容
 			// EOF (Ctrl+D) が検出された場合の処理
 			if (std::cin.eof())
 			{
-				std::cin.clear(); // エラー状態をクリア
-				std::cout << "\nInvalid input. Please try again." << std::endl;
-				continue;
+				std::cout << "\nExiting program..." << std::endl;
+				break; // EOFが検出されたらプログラムを終了
 			}
 			// その他のエラー（実際の入力エラー）の場合は終了
 			break;
