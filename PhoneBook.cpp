@@ -20,7 +20,8 @@ static std::string fit10(const std::string &s)
 {
     if (s.size() > 10)
         return s.substr(0, 9) + ".";
-    return std::string(10 - (int)s.size(), ' ') + s; // setw() #include<iomanips>
+    return s;
+    // return std::string(10 - (int)s.size(), ' ') + s; // setw() #include<iomanips>
 }
 
 // 数字のみか確認（空文字は false）
@@ -109,18 +110,18 @@ void PhoneBook::search()
 
 void PhoneBook::displayContacts()
 {
-    std::cout << fit10("index") << "|"
-              << fit10("first name") << "|"
-              << fit10("last name") << "|"
-              << fit10("nickname") << "|"
+    std::cout << std::setw(10) << std::right << fit10("index") << "|"
+              << std::setw(10) << std::right << fit10("first name") << "|"
+              << std::setw(10) << std::right << fit10("last name") << "|"
+              << std::setw(10) << std::right << fit10("nickname") << "|"
               << std::endl;
 
     for (int i = 0; i < count; ++i)
     {
-        std::cout << fit10(int_to_string(i + 1)) << "|"
-                  << fit10(contacts[i].getName()) << "|"
-                  << fit10(contacts[i].getLastName()) << "|"
-                  << fit10(contacts[i].getNickName()) << "|"
+        std::cout << std::setw(10) << std::right << fit10(int_to_string(i + 1)) << "|"
+                  << std::setw(10) << std::right << fit10(contacts[i].getName()) << "|"
+                  << std::setw(10) << std::right << fit10(contacts[i].getLastName()) << "|"
+                  << std::setw(10) << std::right << fit10(contacts[i].getNickName()) << "|"
                   << std::endl;
     }
 }
