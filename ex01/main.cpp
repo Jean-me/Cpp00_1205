@@ -79,7 +79,5 @@ int main() // Phonebook.cppにあるべき内容
 					  << std::endl;
 		}
 	}
-	// book.add("Jane","Austen","Jenny", "1234567890", "She never married throughout her life.");
-	// book.search();
 	return 0;
 }
