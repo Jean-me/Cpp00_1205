@@ -26,6 +26,8 @@ private:
     std::string darkestSecret;
 
 public:
+    Contact();//コンストラクタ
+
     std::string getName();
     void setName(std::string n);
 
