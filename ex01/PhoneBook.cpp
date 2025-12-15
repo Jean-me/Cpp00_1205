@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   My_Awesome_PhoneBook.cpp                           :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mesasaki <mesasaki@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/11 19:54:10 by mesasaki          #+#    #+#             */
-/*   Updated: 2025/11/11 19:54:10 by mesasaki         ###   ########.fr       */
+/*   Created: 2025/12/15 16:10:05 by mesasaki          #+#    #+#             */
+/*   Updated: 2025/12/15 16:10:05 by mesasaki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@
 // 10文字幅に合わせる（超える場合は先頭9文字+'.'、短い場合は右寄せで空白埋め）
 static std::string fit10(const std::string &s)
 {
-    if (s.size() > 10)//10文字超える場合
+    if (s.size() > 10) // 10文字超える場合
         return s.substr(0, 9) + ".";
-    return s;//超えない場合
+    return s; // 超えない場合
 }
 
 // 数字のみか確認（空文字は false）
@@ -38,9 +38,9 @@ static bool is_number(std::string &s)
 
 static std::string int_to_string(int n)
 {
-    std::ostringstream oss;
-    oss << n;
-    return oss.str();
+    std::ostringstream oss; // std::ostringstream oss; でストリームオブジェクトを作成、C++でデータの入出力を扱うためのオブジェクト
+    oss << n;               // oss << n; で整数 n をストリームに出力
+    return oss.str();       // return oss.str(); でストリームの内容を文字列として取得
 }
 
 //--------------------------------------------------------
@@ -58,7 +58,7 @@ void PhoneBook::add(std::string new_name, std::string new_lastname, std::string 
     contacts[nxt_idx].setNickName(new_nickname);
     contacts[nxt_idx].setPhoneNumber(new_number);
     contacts[nxt_idx].setDarkestSecret(new_darkestsecret);
-    nxt_idx = (nxt_idx + 1) % 8;
+    nxt_idx = (nxt_idx + 1) % 8; // 最大8件の連絡先
     if (count < 8)
         count++; // to keep track of number of contacts added
 }
